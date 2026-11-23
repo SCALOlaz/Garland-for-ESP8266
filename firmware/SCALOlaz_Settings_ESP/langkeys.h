@@ -1,0 +1,98 @@
+#pragma once
+/*
+  Language
+  SCALOlaz 10.07.2024 - 20.11.2024
+  Разделено на два файла для удобства редактирования и оперирования ключами
+*/
+
+// Важно соблюдать порядок ключей и строк в g_strings[]
+enum Strings
+{
+  MAINPAGE,   // Title
+  BUTTONREFRESH,
+  SETTINGS,
+  EFFSETTINGS,
+  CANDLESSSETTINGS,
+  SPARKSETTINGS,
+  GLITTERSETTINGS,
+  
+  SETTINGSPROTECT,
+  SETTINGSPASSWORD,
+  LEDPARAM,
+  
+  ONOFFGARLAND,
+  AUTOONGARLAND,
+  AUTOOFFGARLAND,
+  AOGOFFSET,
+  
+  MAXLEDS,
+  LEDOFFSET,
+  COLORORDER,
+  COLORORDERTEST,
+  
+  LEDPOWER,
+  
+  BRIGHTNESS,
+  MAXBRIGHTNESS,
+  LABELAUDIO,
+  LABELETC,
+  EFFECTLIST,
+  EFFECTSPEED,
+  EFFECTSACHANGE,
+  EFFECTSINTERVAL,
+  ONOFFMIC,
+  ONOFFCLR,
+  ONOFFCANDLESS,
+  CANDLESSFIRST,
+  CANDLESSINTERVAL,
+  
+  ONOFFPALETTES,
+  PALLNAME,
+  PALLLIST,
+  ONLIPALEFF,
+  ONOFFGLITTER,
+  ONOFFFILLINGBKG,
+
+  ONOFFSPARK,
+  SPARKMODE,
+  SPARKSRANDOM,
+  
+  WIFISETTINGS,
+  WIFILIST,
+  WIFICONNECT,
+  WIFIDISCONNECT,
+  WIFIPASSWORD,
+  WIFISORT,
+  WIFIAPDISABLE,
+  
+  BUTTONCLEARDB,
+  PARAGRAPH,
+  PARAGRTEXT_MASTER,
+  PARAGRTEXT_WIFI,
+  PARAGRTEXT_LED,
+  PARAGRNAME,
+  PARAGRTEXT_GUEST,
+  PARAGRTEXT_EXT,
+  MAX,
+  CUSTOMNAME,
+  CUSTOMNAMELEN,
+  COLORTHEME,
+
+  AUTOOTA,
+  AUTOOTATIME,
+  SEARCHAUTOOTA,
+  OTADONE,
+  
+  SYSPARAM,
+  SYSPARAMLIST,
+  
+  // Здесь можно располагать ключи для фраз, которые не требуется переводить в другие локали. Берём из English локали, номер 1
+  TIME_MS,    // ms
+  TIME_S,     // s
+  TIME_MIN,   // min
+  TIME_HRS,   // hours
+  TIME_DAY,   // days
+  TIME_WEEK,  // weeks
+  
+  LAST
+};
