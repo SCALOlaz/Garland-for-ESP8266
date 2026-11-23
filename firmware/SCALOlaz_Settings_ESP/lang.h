@@ -63,7 +63,7 @@ String LangManager::g_strings[LNG_SIZE][LAST] =
 {
   // Русский
   {
-    "Гирлянда 'Christmass Light'",
+    "Гирлянда 'Garland'",
     "Обновить страницу",  // REFRESH
     "Настройки",
     "Настройки доп. эффектов",

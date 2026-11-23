@@ -23,7 +23,7 @@ uint8_t color_theme = db["selecttheme"];   // Тема морды
 // указывается заголовок меню, подключается база данных
 
 const String settName() {
-    String unique = "Christmass Light ";  // + vers;
+    String unique = "Garland ";  // + vers;
     if (db["unique_name"].length()>1) {
         unique += ": '" + (String)db["unique_name"] + "'";
     } else {
@@ -584,7 +584,7 @@ void sett_init() {
 
   sett.setTitle(settName());
   sett.setVersion(vers.c_str()); // vers
-  sett.setProjectInfo(LANG(MAINPAGE).c_str(), "https://t.me/AlexGyverChat/484661/588262");
+  sett.setProjectInfo(LANG(MAINPAGE).c_str(), "https://github.com/SCALOlaz/Garland-for-ESP8266/tree/master");
   setCountAutodisable();
   setCountAutoenable();
   sett.setPacketSize(2048); // Размер пакета, которым швыряемся туда-сюда. Дефолт 1024

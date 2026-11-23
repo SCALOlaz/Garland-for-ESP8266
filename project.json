@@ -1,8 +1,8 @@
 {
   "name": "Garland",
   "about": "Новогодняя Гирлянда на ESP8266 и WS2812B",
-  "version": "3.7",
-  "notes": "Первая публикация",
+  "version": "3.6",
+  "notes": "Первая стабильная версия",
   "builds": [
     {
       "chipFamily": "ESP8266",
