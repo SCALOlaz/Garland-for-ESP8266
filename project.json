@@ -1,0 +1,17 @@
+{
+  "name": "Garland",
+  "about": "Новогодняя Гирлянда на ESP8266 и WS2812B",
+  "version": "3.6",
+  "notes": "Первая публикация",
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        {
+          "path": "https://raw.githubusercontent.com/SCALOlaz/Garland/main/bin/firmware.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
