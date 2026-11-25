@@ -1,5 +1,5 @@
 #pragma once
-#define VER "3.6"
+#define VER "3.61"
 #define NAME "Garland"
 #define URL "SCALOlaz/Garland-for-ESP8266/master/project.json"
 bool useOTA = true; // Использовать автопоиск новой прошивки или нет?
