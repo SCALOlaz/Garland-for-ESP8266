@@ -216,6 +216,7 @@ static void build(sets::Builder& b) {
             }
             
             if (useOTA && b.beginGroup("")) {
+                b.HTML("", R"(<style>.dialog label {padding-left: 5px;font-size: 16px;white-space: pre-line; }</style> )");
                 b.Switch(SH("toggleota"), LANG(AUTOOTA) );
                 b.Select(SH("select_otaenable"), LANG(AUTOOTATIME), otaline);
 
