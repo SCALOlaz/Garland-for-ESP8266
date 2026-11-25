@@ -78,6 +78,8 @@ void db_init() {
   db.init("select_autodisable", (uint8_t)1);
   db.init("counter_autodisable", "");
 
+  db.init("autodisandencicle", (bool)0);
+  
   db.init("selecttheme", (uint8_t)4);
 
   db.init("toggleota", (bool)0);

@@ -23,7 +23,8 @@ enum Strings
   ONOFFGARLAND,
   AUTOONGARLAND,
   AUTOOFFGARLAND,
-  AOGOFFSET,
+  AOGOFFSET,  //"Осталось:"
+  AOCICLE,    //"Зациклить таймеры вкл/выкл."
   
   MAXLEDS,
   LEDOFFSET,

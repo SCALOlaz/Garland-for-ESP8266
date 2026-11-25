@@ -209,7 +209,7 @@ static void build(sets::Builder& b) {
                     }
                     b.endMenu();
                 }
-
+              b.Switch(SH("autodisandencicle"), LANG(AOCICLE));
 
               b.Button(SH("restart"), "Restart ESP", sets::Colors::Red);
               b.endGroup();
@@ -558,7 +558,7 @@ void update(sets::Updater& u) {
   // примечание: при ручных изменениях в базе данных отправлять новые значения не нужно!
   // библиотека сделает это сама =)
   
-  if (ota.hasUpdate()) u.update("ota_update"_h, "Your Version: " + vers + "New Version: v." + ota_ver + "\r\nNote: " + ota_note + "\r\n" + LANG(OTADONE) /*"Доступно обновление. Обновить прошивку?"*/);
+  if (ota.hasUpdate()) u.update("ota_update"_h, "Your Version: " + vers + "New Version: v." + ota_ver + "\r\nNote: " + ota_note + "\r\n" + LANG(OTADONE));
 }
 
 

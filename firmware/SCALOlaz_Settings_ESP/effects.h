@@ -398,7 +398,7 @@ void eff_tick() {
     if ( db["toggleleds"] == true && (millis() - offlineTimer >= ((int)arrayOffline[db["select_autodisable"]]*1000) && db["toggle_autodisable"].toBool()==true) ){
         Serial.println("Time to Offline Garland is Now");
         db["toggleleds"] = false;   // выключить гирлянду
-        db["toggle_autodisable"] = false; // Выключить автоотключение гирлянды
+        if(db["autodisandencicle"]==false) db["toggle_autodisable"] = false; // Выключить автоотключение гирлянды
         eff_work = false;   // уходим в ожидание чуда
         setCountAutoenable();
         gotreload = true;
@@ -466,7 +466,7 @@ void eff_tick() {
     if ( db["toggleleds"] == false && (millis() - onlineTimer >= ((int)arrayOffline[db["select_autoenable"]]*1000) && db["toggle_autoenable"].toBool()==true) ) {
         Serial.println("Time to Online Garland is Now");
         db["toggleleds"] = true;   // включить гирлянду
-        db["toggle_autoenable"] = false; // Выключить автоотключение гирлянды
+        if(db["autodisandencicle"]==false) db["toggle_autoenable"] = false; // Выключить автоотключение гирлянды
         eff_work = true;   // уходим в ожидание чуда
         setCountAutodisable();
         gotreload = true;
