@@ -8,7 +8,7 @@
       "chipFamily": "ESP8266",
       "parts": [
         {
-          "path": "https://raw.githubusercontent.com/SCALOlaz/Garland-for-ESP8266/master/bin/firmware.bin",
+          "path": "https://raw.githubusercontent.com/SCALOlaz/Garland-for-ESP8266/master/bin/SCALOlaz_Settings_ESP.ino.d1_mini.bin",
           "offset": 0
         }
       ]

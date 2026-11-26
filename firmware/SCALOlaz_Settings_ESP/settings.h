@@ -33,6 +33,7 @@ const String settName() {
 }
 
 AutoOTA ota(VER, URL);
+bool ota_confirm = false;
 
 //SettingsAsync sett("Christmass Light " + vers, &db); // "Гирлянда"
 SettingsGyver sett("Christmass Light " + vers, &db); // "Гирлянда"
@@ -373,14 +374,18 @@ static void build(sets::Builder& b) {
     b.endGroup();
     }
 */
-      if (b.build.granted && b.Confirm("ota_update"_h)) {
-        Serial.print("Confirmed: ");Serial.println((uint8_t)b.build.value);
-          if (b.build.value.toBool()) {
+      if (b.build.granted && b.Confirm("ota_update"_h) ) {
+          ota_confirm = false;
+          Serial.print("Confirmed: ");Serial.println((uint8_t)b.build.value);
+          if (b.build.value.toBool()==true) {
               Serial.println("OTA update! Wait please");
-              
+             
               ota.updateNow();
               delay(2000);
+              b.reload();
               ESP.restart();
+          } else {
+              Serial.println("OTA canceled! Wait please");
               b.reload();
           }
       }
@@ -559,7 +564,10 @@ void update(sets::Updater& u) {
   // примечание: при ручных изменениях в базе данных отправлять новые значения не нужно!
   // библиотека сделает это сама =)
   
-  if (ota.hasUpdate()) u.update("ota_update"_h, "Your Version: " + vers + "\r\n New Version: v." + ota_ver + "\r\n Desc.: " + ota_note + "\r\n\r\n " + LANG(OTADONE));
+  if (ota.hasUpdate() && ota_confirm==false) {
+      u.update("ota_update"_h, "Your Version: " + vers + "\r\n New Version: v." + ota_ver + "\r\n Desc.: " + ota_note + "\r\n\r\n " + LANG(OTADONE));
+      ota_confirm = true;
+  }
 }
 
 
