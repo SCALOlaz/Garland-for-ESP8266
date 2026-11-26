@@ -380,7 +380,8 @@ static void build(sets::Builder& b) {
           if (b.build.value.toBool()==true) {
               Serial.println("OTA update! Wait please");
              
-              ota.updateNow();
+         //     ota.updateNow();
+              ota.update();
               delay(2000);
               b.reload();
               ESP.restart();
