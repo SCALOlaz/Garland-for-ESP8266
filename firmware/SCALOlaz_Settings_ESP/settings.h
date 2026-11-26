@@ -559,7 +559,7 @@ void update(sets::Updater& u) {
   // примечание: при ручных изменениях в базе данных отправлять новые значения не нужно!
   // библиотека сделает это сама =)
   
-  if (ota.hasUpdate()) u.update("ota_update"_h, "Your Version: " + vers + "New Version: v." + ota_ver + "\r\nNote: " + ota_note + "\r\n" + LANG(OTADONE));
+  if (ota.hasUpdate()) u.update("ota_update"_h, "Your Version: " + vers + "\r\n New Version: v." + ota_ver + "\r\n Desc.: " + ota_note + "\r\n\r\n " + LANG(OTADONE));
 }
 
 
