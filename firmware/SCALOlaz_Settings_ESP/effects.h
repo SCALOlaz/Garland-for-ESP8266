@@ -302,7 +302,7 @@ void testRGB(CRGB color) {
 void eff_init() {
     pinMode(LED_PIN, OUTPUT);
     get_Order();
-    FastLED.clearData();
+    FastLED.clear();
     FastLED.setBrightness(0);
     FastLED.show();
     delay(5);
@@ -361,13 +361,13 @@ int dmode = (int)db["selecteffect"];
 void setCountAutoenable() {
   if ( db["toggleleds"] == false && db["toggle_autoenable"].toBool()==true ) {
     onlineTimer = millis();
-    coeffectsTimerON = (millis()/1000)+(int)arrayOffline[db["select_autoenable"]];
+    coeffectsTimerON = (millis()/1000)+(int)arrayOffline[(uint8_t)db["select_autoenable"]];
   }
 }
 void setCountAutodisable() {
   if ( db["toggleleds"] == true && db["toggle_autodisable"].toBool()==true ) {
     offlineTimer = millis();
-    coeffectsTimerOFF = (millis()/1000)+(int)arrayOffline[db["select_autodisable"]];
+    coeffectsTimerOFF = (millis()/1000)+(int)arrayOffline[(uint8_t)db["select_autodisable"]];
   }
 }
 
@@ -454,13 +454,14 @@ void eff_tick() {
     }
 
     if (showFlag) {
+//      FastLED.clear();
       FastLED.show();
       delay(5);
       FastLED.show();
     }
   } else {    
     if (eff_work) {
-        FastLED.clear(true);
+        FastLED.clear();
         FastLED.clearData();   
         FastLED.setBrightness(0);
 
