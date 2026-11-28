@@ -20,7 +20,7 @@ enum EOrder {
   BGR=0210
 };
 */
-constexpr int OFL_SIZE = 19;  // Count of Offline Size
+constexpr int OFL_SIZE = 17;  // Count of Offline Size
 int arrayOffline[OFL_SIZE] =
 {
    15           // 15 секунд
@@ -39,9 +39,9 @@ int arrayOffline[OFL_SIZE] =
 ,  60*(10*60)   // 10 ч
 ,  60*(11*60)   // 11 ч
 ,  60*(12*60)   // 12 часов
-,  60*(18*60)   // 18 ч
+//,  60*(18*60)   // 18 ч
 ,  60*(24*60)   // 24 часа
-,  60*(36*60)   // 36 ч
+//,  60*(36*60)   // 36 ч
 };
 
 constexpr int OTA_SIZE = 7;  // Count of Offline Size
@@ -305,6 +305,8 @@ void eff_init() {
     FastLED.clearData();
     FastLED.setBrightness(0);
     FastLED.show();
+    delay(5);
+    FastLED.show();
 //    if (CURRENT_LIMIT > 0) FastLED.setMaxPowerInVoltsAndMilliamps(5, CURRENT_LIMIT);
     if (db["togglepower"].toBool()) {
         FastLED.setMaxPowerInVoltsAndMilliamps(5, (int)db["selectpower"]);
@@ -451,14 +453,21 @@ void eff_tick() {
         playTimer = millis();
     }
 
-    if (showFlag) FastLED.show();
+    if (showFlag) {
+      FastLED.show();
+      delay(5);
+      FastLED.show();
+    }
   } else {    
     if (eff_work) {
         FastLED.clear(true);
         FastLED.clearData();   
-        FastLED.setBrightness(1);
+        FastLED.setBrightness(0);
 
-        FastLED.show(true);
+        FastLED.show();
+        delay(5);
+        FastLED.show();
+        delay(5);
         eff_work = false;
         Serial.println("Shut UP");
     }
